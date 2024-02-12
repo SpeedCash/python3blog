@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python3: Mutable, Immutable... Everything Is Object!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p, li {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+        code {
+            background-color: #f4f4f4;
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: block;
+            white-space: pre-wrap;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Python3: Mutable, Immutable... Everything Is Object!</h1>
+    <br>
+    <img src="python.webp" width="500" alt="Python Objects">
+    <h2>Introduction</h2>
+    <p>Python est un langage de programmation puissant et flexible...</p>
+    
+    <h2>ID et Type</h2>
+    <p>En Python, chaque objet a une identité...</p>
+    <code>
+        a = 10<br>
+        print(id(a))<br>
+        print(type(a))
+    </code>
+    
+    <h2>Objets Mutables</h2>
+    <p>Les objets mutables peuvent être modifiés après leur création...</p>
+    <code>
+        lst = [1, 2, 3]<br>
+        print(id(lst))<br>
+        lst.append(4)<br>
+        print(id(lst))  # L'ID reste le même
+    </code>
+    
+    <h2>Objets Immuables</h2>
+    <p>Les objets immuables, contrairement aux objets mutables...</p>
+    <code>
+        a = (1, 2, 3)<br>
+        print(id(a))<br>
+        a += (4,)<br>
+        print(id(a))  # L'ID change
+    </code>
+    
+    <h2>Importance et Traitement par Python</h2>
+    <p>La distinction entre objets mutables et immuables est cruciale...</p>
+    
+    <h2>Passage d'Arguments aux Fonctions</h2>
+    <p>Lorsqu'un objet est passé à une fonction, Python passe une référence...</p>
+    <code>
+        def update_list(lst):<br>
+            lst.append(4)<br>
+        <br>
+        def update_number(a):<br>
+            a += 1<br>
+        <br>
+        lst = [1, 2, 3]<br>
+        a = 10<br>
+        <br>
+        update_list(lst)<br>
+        update_number(a)<br>
+        <br>
+        print(lst)  # [1, 2, 3, 4]<br>
+        print(a)  # 10
+    </code>
+    
+    <h2>Conclusion</h2>
+    <p>Comprendre la différence entre les objets mutables et immuables en Python...</p>
+</body>
+</html>
+
